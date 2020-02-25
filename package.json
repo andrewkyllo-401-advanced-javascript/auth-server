@@ -1,0 +1,25 @@
+{
+  "name": "auth-server",
+  "version": "0.1.0",
+  "description": "## Auth Server",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^25.1.0",
+    "lint": "^0.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrewkyllo-401-advanced-javascript/auth-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/andrewkyllo-401-advanced-javascript/auth-server/issues"
+  },
+  "homepage": "https://github.com/andrewkyllo-401-advanced-javascript/auth-server#readme"
+}
