@@ -16,5 +16,4 @@ mongoose.connect(MONGODB_URI, mongooseOptions, () => {
 
 // start express server
 const server = require('./src/app');
-console.log(PORT)
 server.start(PORT);

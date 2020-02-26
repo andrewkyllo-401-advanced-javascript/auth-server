@@ -1,30 +1,33 @@
 'use strict';
 
-// require express
+// Third part resources
 const express = require('express');
-
-// App-level middleware
+const cors = require('cors');
+const morgan = require('morgan');
+// Prepare the express app
 const app = express();
+// App-level middleware
+app.use(cors());
+app.use(morgan('dev'));
 app.use(express.json());
-const basicAuth = require('./middleware/basic-auth');
+app.use(express.static)
 
-// models
-const User = require('./models/user');
+
 
 // Routes
-app.post('/signup', async (req, res) => {
-  const newUser = new User(req.body);
-  console.log(newUser.authenticateBasic())
-  // newUser.save()
-  //   .then(result )
-});
+const authRouter = require('./routes/authRouter');
+app.use(authRouter);
 
 
 
 
 
 
-
+// Catch alls
+const notFound = require('./middleware/notFound');
+app.use(notFound);
+const errorHandler = require('./middleware/errorHandler');
+app.use(errorHandler);
 app.get('/this_will_error', (req, res) => {
   throw new Error('Internal server error.');
 });
@@ -41,7 +44,7 @@ module.exports = {
         console.log(`Server is listening on port ${port}`);
       });
     } else {
-      console.error('Server is already running!')
+      console.error('Server is already running!');
     }
   },
 };
