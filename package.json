@@ -4,19 +4,28 @@
   "description": "## Auth Server",
   "main": "index.js",
   "dependencies": {
+    "@code-fellows/supergoose": "^1.0.1",
+    "bcrypt": "^4.0.0",
+    "eslint": "^6.8.0",
     "express": "^4.17.1",
     "jest": "^25.1.0",
-    "lint": "^0.7.0"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.9.2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "dotenv": "^8.2.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --coverage",
+    "dev": "nodemon index.js",
+    "test-watch": "jest --watchAll --coverage",
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/andrewkyllo-401-advanced-javascript/auth-server.git"
   },
-  "author": "",
+  "author": "Andrew Kyllo",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/andrewkyllo-401-advanced-javascript/auth-server/issues"
